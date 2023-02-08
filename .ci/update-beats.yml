@@ -15,11 +15,12 @@ scms:
       branch: '{{ requiredEnv "BRANCH_NAME" }}'
 
 actions:
-  apm-server-pr:
+  default:
     kind: github/pullrequest
     scmid: apm-server
+    sourceid: beats
     spec:
-      title: "[automation] update libbeat and beats packaging"
+      title: '[automation] update libbeat and beats packaging elastic/beats@{{ source "beats" }}'
       automerge: false
       labels:
         - automation
