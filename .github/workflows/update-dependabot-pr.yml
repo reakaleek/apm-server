@@ -26,11 +26,11 @@ jobs:
       - name: Update NOTICE.txt
         run: make notice
       - name: Debug diff
-        run: git diff HEAD -- NOTICE.txt
+        run: git diff HEAD^1 -- NOTICE.txt
       - name: Check if NOTICE.txt has changed
         id: check-notice-diff
         run: |
-          if git diff --quiet HEAD -- NOTICE.txt; then
+          if git diff --quiet HEAD^1 -- NOTICE.txt; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"
