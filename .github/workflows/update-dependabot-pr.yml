@@ -25,8 +25,6 @@ jobs:
           go-version-file: go.mod
       - name: Update NOTICE.txt
         run: make notice
-      - name: Debug diff
-        run: git status --porcelain | grep -q 'NOTICE.txt'
       - name: Check if NOTICE.txt has changed
         id: check-notice-diff
         run: |
