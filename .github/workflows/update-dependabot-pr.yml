@@ -27,7 +27,7 @@ jobs:
         run: make notice
       - name: Debug diff
         run: git diff-index HEAD -- NOTICE.txt
-      - name: Check if NOTICE.txt has changed
+      - name: Check if NOTICE.txt has changed # why
         id: check-notice-diff
         run: |
           if git diff-index --quiet HEAD -- NOTICE.txt; then
